@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELIARH.IT — Scuola Globale di Eccellenza</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --menu-bg:#4a5568;--menu-hover:#2d3748;--menu-text:#f7f3ee;--menu-active:#C9A84C;
+  --body-bg:#f5f0e8;--card-bg:#f0ead8;--card-border:#d6ccb4;
+  --text-dark:#1a1a1a;--text-mid:#3a3a3a;--text-muted:#6a6a6a;
+  --gold:#C9A84C;--gold-d:#9a7a30;--white:#ffffff;--radius:6px;--shadow:0 2px 12px rgba(0,0,0,0.10);
+}
+body{font-family:Arial,sans-serif;font-size:14px;background:var(--body-bg);color:var(--text-dark);line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+header{background:var(--menu-bg);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;}
+.nav-logo{font-size:1.3rem;font-weight:bold;color:var(--menu-active);letter-spacing:.08em;}
+.nav-logo span{color:var(--menu-text);font-weight:normal;font-size:1rem;margin-left:.4rem;}
+.lang-switcher{display:flex;gap:.3rem;}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.25);color:var(--menu-text);font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;letter-spacing:.08em;padding:4px 9px;border-radius:3px;cursor:pointer;transition:background .2s,border-color .2s;}
+.lang-btn:hover,.lang-btn.active{background:var(--gold);border-color:var(--gold);color:#1a1a1a;}
+.nav-links{background:var(--menu-hover);display:flex;justify-content:center;gap:0;padding:0 3rem;list-style:none;overflow-x:auto;}
+.nav-links li a{display:block;color:var(--menu-text);font-size:.78rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.4rem;transition:background .2s,color .2s;white-space:nowrap;}
+.nav-links li a:hover{background:var(--menu-bg);color:var(--menu-active);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#3d4a5c 0%,#2d3748 60%,#1a2230 100%);color:var(--menu-text);text-align:center;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(201,168,76,.12) 0%,transparent 70%);}
+.hero-badge{display:inline-block;background:var(--gold);color:#1a1a1a;font-size:.68rem;font-weight:bold;letter-spacing:.22em;text-transform:uppercase;padding:5px 16px;border-radius:2px;margin-bottom:1.8rem;}
+.hero h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:bold;line-height:1.25;margin-bottom:1.2rem;position:relative;}
+.hero h1 em{color:var(--menu-active);font-style:normal;}
+.hero-sub{font-size:.95rem;color:rgba(247,243,238,0.75);max-width:620px;margin:0 auto 2.5rem;line-height:1.85;}
+.hero-divider{display:flex;align-items:center;gap:1rem;width:220px;margin:0 auto 2.5rem;}
+.hdl{flex:1;height:.5px;background:rgba(201,168,76,.5);}
+.hdd{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);}
+.hero-stats{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;}
+.hstat-n{font-size:1.8rem;font-weight:bold;color:var(--menu-active);line-height:1;}
+.hstat-l{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(247,243,238,0.55);margin-top:.2rem;}
+
+/* LOGIN BANNER */
+.login-banner{background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--gold);max-width:1100px;margin:2rem auto 0;padding:1.4rem 2rem;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.login-banner p{font-size:.9rem;color:var(--text-mid);}
+.btn-login{background:var(--menu-bg);color:var(--menu-text);font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.6rem;border:none;border-radius:var(--radius);cursor:pointer;transition:background .2s;white-space:nowrap;}
+.btn-login:hover{background:var(--menu-active);color:#1a1a1a;}
+
+/* MAIN */
+main{max-width:1100px;margin:0 auto;padding:3rem 2rem 5rem;}
+.section{margin-bottom:3.5rem;}
+.section-label{font-size:.65rem;font-weight:bold;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.6rem;}
+.section h2{font-size:1.3rem;font-weight:bold;color:var(--text-dark);margin-bottom:1rem;border-bottom:2px solid var(--gold);padding-bottom:.5rem;display:inline-block;}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:1.5rem;}
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.4rem 1.5rem;box-shadow:var(--shadow);}
+.card-num{font-size:1.4rem;font-weight:bold;color:var(--gold);margin-bottom:.4rem;}
+.card-title{font-size:.82rem;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dark);margin-bottom:.6rem;}
+.card p{font-size:.88rem;color:var(--text-mid);line-height:1.75;}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border:1px solid var(--card-border);border-radius:var(--radius);box-shadow:var(--shadow);margin-top:1.5rem;}
+table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--white);}
+thead th{background:var(--menu-bg);color:var(--menu-text);font-size:.72rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1rem;text-align:left;white-space:nowrap;}
+tbody td{padding:.85rem 1rem;border-bottom:1px solid #ede8da;color:var(--text-mid);vertical-align:top;line-height:1.6;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:#faf6ec;}
+.stag{display:inline-block;font-size:.6rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-bottom:3px;}
+.s1{background:#fef3d4;color:#7a5c10;border:1px solid #e8d48a;}
+.s2{background:#d4e8fe;color:#1a4a7a;border:1px solid #8ab8e8;}
+.s3{background:#e8d4fe;color:#4a1a7a;border:1px solid #b88ae8;}
+.s4{background:#d4feea;color:#1a7a4a;border:1px solid #8ae8b8;}
+.tag-free{display:inline-block;background:#d4feea;color:#1a7a4a;font-size:.65rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:2px;border:1px solid #8ae8b8;}
+
+/* INFO */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.5rem;}
+.info-box{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.3rem 1.5rem;box-shadow:var(--shadow);}
+.info-box h3{font-size:.8rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--card-border);}
+.info-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.85rem;}
+.info-row:last-child{border-bottom:none;}
+.info-key{color:var(--text-muted);}
+.info-val{color:var(--text-dark);font-weight:bold;}
+
+/* HIGHLIGHT */
+.highlight-box{background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.4rem 1.8rem;margin-top:1.5rem;box-shadow:var(--shadow);}
+.highlight-box p{font-size:.9rem;color:var(--text-mid);line-height:1.8;}
+
+/* MODALITIES */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem;}
+.mod-card{background:var(--card-bg);border:1px solid var(--card-border);border-top:3px solid var(--gold);border-radius:var(--radius);padding:1.4rem 1.3rem;box-shadow:var(--shadow);text-align:center;}
+.mod-icon{font-size:1.6rem;margin-bottom:.6rem;}
+.mod-title{font-size:.82rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dark);margin-bottom:.5rem;}
+.mod-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7;}
+
+/* CONTINENTS */
+.cont-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.5rem;}
+.cont-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:1.2rem 1rem;text-align:center;box-shadow:var(--shadow);}
+.cont-num{font-size:1.3rem;font-weight:bold;color:var(--gold);margin-bottom:.4rem;}
+.cont-name{font-size:.72rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dark);margin-bottom:.4rem;}
+.cont-note{font-size:.75rem;color:var(--text-muted);line-height:1.55;}
+
+/* FOOTER */
+footer{background:var(--menu-hover);color:rgba(247,243,238,0.65);text-align:center;padding:2rem;font-size:.78rem;line-height:1.8;}
+footer strong{color:var(--menu-active);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-top{padding:0 1.2rem;}
+  .nav-links{padding:0 .5rem;justify-content:flex-start;}
+  .info-grid{grid-template-columns:1fr;}
+  .mod-grid{grid-template-columns:1fr 1fr;}
+  .cont-grid{grid-template-columns:1fr 1fr;}
+  main{padding:2rem 1.2rem 4rem;}
+  .hero{padding:3.5rem 1.2rem 3rem;}
+  .login-banner{flex-direction:column;text-align:center;}
+  .hero-stats{gap:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-top">
+    <div class="nav-logo">ELIARH<span>.IT</span></div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('it')">IT</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about"      data-nav="about"></a></li>
+    <li><a href="#mission"    data-nav="mission"></a></li>
+    <li><a href="#curriculum" data-nav="curriculum"></a></li>
+    <li><a href="#modalities" data-nav="modalities"></a></li>
+    <li><a href="#global"     data-nav="global"></a></li>
+    <li><a href="#access"     data-nav="access"></a></li>
+  </ul>
+</header>
+
+<section class="hero">
+  <div class="hero-badge" data-t="hero_badge"></div>
+  <h1 data-t="hero_h1"></h1>
+  <p class="hero-sub" data-t="hero_sub"></p>
+  <div class="hero-divider"><div class="hdl"></div><div class="hdd"></div><div class="hdl"></div></div>
+  <div class="hero-stats">
+    <div><div class="hstat-n">5</div><div class="hstat-l" data-t="stat_cont"></div></div>
+    <div><div class="hstat-n">60+</div><div class="hstat-l" data-t="stat_nat"></div></div>
+    <div><div class="hstat-n">1:3</div><div class="hstat-l" data-t="stat_ratio"></div></div>
+    <div><div class="hstat-n">2027</div><div class="hstat-l" data-t="stat_start"></div></div>
+    <div><div class="hstat-n">100%</div><div class="hstat-l" data-t="stat_free"></div></div>
+  </div>
+</section>
+
+<div class="login-banner">
+  <p data-t="login_text"></p>
+  <button class="btn-login" data-t="login_btn"></button>
+</div>
+
+<main>
+
+  <div class="section" id="about">
+    <p class="section-label" data-t="s_about_label"></p>
+    <h2 data-t="s_about_title"></h2>
+    <p data-t="s_about_body"></p>
+    <div class="highlight-box"><p data-t="s_about_highlight"></p></div>
+  </div>
+
+  <div class="section" id="mission">
+    <p class="section-label" data-t="s_mission_label"></p>
+    <h2 data-t="s_mission_title"></h2>
+    <div class="cards">
+      <div class="card"><div class="card-num">01</div><div class="card-title" data-t="m1_title"></div><p data-t="m1_body"></p></div>
+      <div class="card"><div class="card-num">02</div><div class="card-title" data-t="m2_title"></div><p data-t="m2_body"></p></div>
+      <div class="card"><div class="card-num">03</div><div class="card-title" data-t="m3_title"></div><p data-t="m3_body"></p></div>
+      <div class="card"><div class="card-num">04</div><div class="card-title" data-t="m4_title"></div><p data-t="m4_body"></p></div>
+    </div>
+  </div>
+
+  <div class="section" id="curriculum">
+    <p class="section-label" data-t="s_curr_label"></p>
+    <h2 data-t="s_curr_title"></h2>
+    <p data-t="s_curr_intro"></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-t="th_stage"></th><th data-t="th_age"></th><th data-t="th_subjects"></th>
+            <th data-t="th_wisdom"></th><th data-t="th_arts"></th><th data-t="th_lang"></th><th data-t="th_fee"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="stag s1" data-t="st1_tag"></span><br><span data-t="st1_name"></span></td>
+            <td>8–11</td><td data-t="st1_sub"></td><td data-t="st1_wis"></td>
+            <td data-t="st1_arts"></td><td data-t="st1_lang"></td>
+            <td><span class="tag-free" data-t="free_label"></span></td>
+          </tr>
+          <tr>
+            <td><span class="stag s2" data-t="st2_tag"></span><br><span data-t="st2_name"></span></td>
+            <td>12–13</td><td data-t="st2_sub"></td><td data-t="st2_wis"></td>
+            <td data-t="st2_arts"></td><td data-t="st2_lang"></td>
+            <td><span class="tag-free" data-t="free_label"></span></td>
+          </tr>
+          <tr>
+            <td><span class="stag s3" data-t="st3_tag"></span><br><span data-t="st3_name"></span></td>
+            <td>14–16</td><td data-t="st3_sub"></td><td data-t="st3_wis"></td>
+            <td data-t="st3_arts"></td><td data-t="st3_lang"></td>
+            <td><span class="tag-free" data-t="free_label"></span></td>
+          </tr>
+          <tr>
+            <td><span class="stag s4" data-t="st4_tag"></span><br><span data-t="st4_name"></span></td>
+            <td>17–18</td><td data-t="st4_sub"></td><td data-t="st4_wis"></td>
+            <td data-t="st4_arts"></td><td data-t="st4_lang"></td>
+            <td><span class="tag-free" data-t="free_label"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="modalities">
+    <p class="section-label" data-t="s_mod_label"></p>
+    <h2 data-t="s_mod_title"></h2>
+    <p data-t="s_mod_intro"></p>
+    <div class="mod-grid">
+      <div class="mod-card"><div class="mod-icon">🖥</div><div class="mod-title" data-t="mod1_title"></div><p data-t="mod1_body"></p></div>
+      <div class="mod-card"><div class="mod-icon">👨‍🏫</div><div class="mod-title" data-t="mod2_title"></div><p data-t="mod2_body"></p></div>
+      <div class="mod-card"><div class="mod-icon">🏫</div><div class="mod-title" data-t="mod3_title"></div><p data-t="mod3_body"></p></div>
+    </div>
+  </div>
+
+  <div class="section" id="global">
+    <p class="section-label" data-t="s_global_label"></p>
+    <h2 data-t="s_global_title"></h2>
+    <p data-t="s_global_intro"></p>
+    <div class="cont-grid">
+      <div class="cont-card"><div class="cont-num">I</div><div class="cont-name" data-t="c1_name"></div><div class="cont-note" data-t="c1_note"></div></div>
+      <div class="cont-card"><div class="cont-num">II</div><div class="cont-name" data-t="c2_name"></div><div class="cont-note" data-t="c2_note"></div></div>
+      <div class="cont-card"><div class="cont-num">III</div><div class="cont-name" data-t="c3_name"></div><div class="cont-note" data-t="c3_note"></div></div>
+      <div class="cont-card"><div class="cont-num">IV</div><div class="cont-name" data-t="c4_name"></div><div class="cont-note" data-t="c4_note"></div></div>
+      <div class="cont-card"><div class="cont-num">V</div><div class="cont-name" data-t="c5_name"></div><div class="cont-note" data-t="c5_note"></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="access">
+    <p class="section-label" data-t="s_access_label"></p>
+    <h2 data-t="s_access_title"></h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3 data-t="acc_box1_title"></h3>
+        <div class="info-row"><span class="info-key" data-t="acc_r1k"></span><span class="info-val" data-t="acc_r1v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc_r2k"></span><span class="info-val" data-t="acc_r2v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc_r3k"></span><span class="info-val" data-t="acc_r3v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc_r4k"></span><span class="info-val" data-t="acc_r4v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc_r5k"></span><span class="info-val" data-t="acc_r5v"></span></div>
+      </div>
+      <div class="info-box">
+        <h3 data-t="acc_box2_title"></h3>
+        <div class="info-row"><span class="info-key" data-t="acc2_r1k"></span><span class="info-val" data-t="acc2_r1v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc2_r2k"></span><span class="info-val" data-t="acc2_r2v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc2_r3k"></span><span class="info-val" data-t="acc2_r3v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc2_r4k"></span><span class="info-val" data-t="acc2_r4v"></span></div>
+        <div class="info-row"><span class="info-key" data-t="acc2_r5k"></span><span class="info-val" data-t="acc2_r5v"></span></div>
+      </div>
+    </div>
+    <div class="highlight-box"><p data-t="s_access_note"></p></div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>ELIARH.IT</strong> — Azione Sociale E.R.H.D.<br>
+  <span data-t="footer_note"></span>
+</footer>
+
+<script>
+const T={
+  it:{
+    hero_badge:"Azione Sociale Esclusiva · Membri E.R.H.D.",
+    hero_h1:"L'istruzione d'eccellenza<br><em>accessibile a tutti i membri</em>",
+    hero_sub:"Una scuola globale gratuita, con lo stesso livello dei migliori istituti mondiali. Riservata ai membri E.R.H.D. in cinque continenti. Inizio lezioni: 2027.",
+    stat_cont:"Continenti",stat_nat:"Nazionalità",stat_ratio:"Prof / Alunno",stat_start:"Inizio lezioni",stat_free:"Gratuita",
+    login_text:"<strong>Sei membro E.R.H.D.?</strong> Accedi alla piattaforma educativa completa: lezioni, materiali, professori e certificazione internazionale.",
+    login_btn:"Accesso Membri →",
+    s_about_label:"I — Chi Siamo",s_about_title:"Una scuola senza precedenti",
+    s_about_body:"ELIARH.IT è la prima scuola globale gratuita di eccellenza riservata ai membri E.R.H.D. Con un curriculum allineato agli standard del Baccalaureato Internazionale (IB) e riconoscimento nazionale in ogni paese, offriamo un'istruzione di alto livello che va dal ciclo primario al diploma superiore — completamente gratuita, come azione sociale dell'organizzazione.",
+    s_about_highlight:"Ogni membro E.R.H.D. e i suoi figli hanno diritto a questa formazione, indipendentemente dalla loro condizione economica o geografica. L'accesso si effettua tramite login esclusivo sulla piattaforma.",
+    s_mission_label:"II — Missione",s_mission_title:"Quattro pilastri fondatori",
+    m1_title:"Eccellenza Accessibile",m1_body:"Un'educazione equivalente ai migliori istituti mondiali, senza costi per il membro. La conoscenza non deve essere privilegio di pochi.",
+    m2_title:"Certificazione Internazionale",m2_body:"Diplomi riconosciuti: IB (International Baccalaureate) e certificazione nazionale in ogni paese dove operano i membri E.R.H.D.",
+    m3_title:"Formazione Integrale",m3_body:"Scienze, arti, lingue, tecnologia e dimensione spirituale — un percorso che sviluppa l'intero potenziale dell'individuo.",
+    m4_title:"Rete Civilizzatrice",m4_body:"1,5 milioni di famiglie in 5 continenti, connesse da una stessa visione formativa. Una rete che durerà generazioni.",
+    s_curr_label:"III — Curriculum",s_curr_title:"Dal Primario al Diploma",
+    s_curr_intro:"Quattro fasi di formazione. Ogni fase integra materie accademiche di livello IB, una dimensione formativa esclusiva ELIARH, arti, sport e almeno tre lingue.",
+    th_stage:"Fase",th_age:"Età",th_subjects:"Materie Accademiche (IB)",th_wisdom:"Percorso ELIARH",th_arts:"Arti e Sport",th_lang:"Lingue",th_fee:"Costo",
+    free_label:"Gratuita",
+    st1_tag:"Juniors",st1_name:"Primario Bilingue",st1_sub:"Matematica · Scienze · Storia · Geografia · Informatica · Letteratura · PSHE",st1_wis:"Mitologia Comparata · Simboli e Archetipo · Arte Sacra",st1_arts:"Musica · Arti Visive · Nuoto · Danza · Arti Marziali",st1_lang:"Lingua madre + Inglese + Francese",
+    st2_tag:"Cadets",st2_name:"Scuola Media",st2_sub:"Mat. Avanzata · Biologia · Fisica · Chimica · Storia Globale · Informatica",st2_wis:"Testi Sacri · Tradizioni Orientali e Occidentali · Filosofia della Coscienza",st2_arts:"Teatro · Orchestra · Arti Plastiche · Sport",st2_lang:"+ 3ª lingua (ES / DE / AR / ZH / PT)",
+    st3_tag:"Jeunes Seniors",st3_name:"Liceo — Pre-Bac",st3_sub:"Mat. HL · Bio · Chimica · Fisica · Informatica · Economia-Politica · TOK prep",st3_wis:"Cosmologia · Kabbalah · Alchimia · Ermetismo · Leadership Spirituale",st3_arts:"Cinema · Architettura · Danza Contemporanea · Atletica",st3_lang:"+ 4ª lingua opzionale · Madrelingua avanzata",
+    st4_tag:"Seniors",st4_name:"Diploma — IB / Bac",st4_sub:"IB Diploma (6 materie HL/SL) · Extended Essay · TOK · CAS · Preparazione universitaria",st4_wis:"Sacro e Potere · Fondazione di Istituzioni · Progetto Personale ELIARH · Diplomazia Spirituale",st4_arts:"Atletica avanzata · Progetto artistico individuale · Servizio civilizzatore",st4_lang:"Certificato Bilingue ELIARH (Ing + Fr/Port + lingua regionale)",
+    s_mod_label:"IV — Modalità",s_mod_title:"Tre modalità di apprendimento",s_mod_intro:"La scuola opera in tre modalità complementari, garantendo accesso a tutti i membri indipendentemente dalla loro posizione geografica.",
+    mod1_title:"Online — API",mod1_body:"Lezioni condotte da intelligenze artificiali specializzate (Claude, GPT, Gemini) addestrate per ogni disciplina. Disponibile 24h, in 5 lingue, su tutti i dispositivi.",
+    mod2_title:"Online — Umano",mod2_body:"Professori qualificati in sessioni live, tutoraggio individuale e correzione degli elaborati. Interazione reale con esperti internazionali.",
+    mod3_title:"Presenziale",mod3_body:"Centri di presenza fisica nei 5 continenti, per laboratori, esami certificati, immersioni culturali e attività pratiche.",
+    s_global_label:"V — Presenza Globale",s_global_title:"Cinque continenti, una formazione",s_global_intro:"I membri E.R.H.D. si trovano in tutto il mondo. La scuola li raggiunge ovunque — in lingua locale, con certificazione riconosciuta nel loro paese.",
+    c1_name:"Europa",c1_note:"Sede principale · Svizzera e Portogallo · Tradizioni occidentali",
+    c2_name:"Americhe",c2_note:"Brasile e USA · Portale digitale · Tradizioni atlantiche",
+    c3_name:"Asia",c3_note:"India e Giappone · Vedanta · Buddhismo · Filosofia orientale",
+    c4_name:"Africa",c4_note:"Marocco ed Etiopia · Tradizioni ermetiche · Gnosi africana",
+    c5_name:"Oceania",c5_note:"Australia · Tradizioni aborigene · Saggezza primordiale",
+    s_access_label:"VI — Accesso",s_access_title:"Come accedere",
+    acc_box1_title:"Requisiti di Accesso",acc_r1k:"Condizione",acc_r1v:"Membro E.R.H.D. attivo",acc_r2k:"Costo",acc_r2v:"Gratuita — Azione Sociale",acc_r3k:"Età minima",acc_r3v:"8 anni (primario)",acc_r4k:"Lingue",acc_r4v:"IT / PT / EN / ES / FR",acc_r5k:"Inizio lezioni",acc_r5v:"2027",
+    acc_box2_title:"Certificazioni",acc2_r1k:"Diploma internazionale",acc2_r1v:"IB — International Baccalaureate",acc2_r2k:"Riconoscimento nazionale",acc2_r2v:"In ogni paese dei membri",acc2_r3k:"Certificato esclusivo",acc2_r3v:"Diploma ELIARH Magisterium",acc2_r4k:"Famiglie abilitate",acc2_r4v:"1,5 milioni · 5 continenti",acc2_r5k:"Ratio professore / alunno",acc2_r5v:"1 : 3",
+    s_access_note:"Il sito è visibile a tutti. L'accesso ai contenuti educativi, alla piattaforma di lezioni e alla matricola è riservato esclusivamente ai membri E.R.H.D. con credenziali attive.",
+    footer_note:"Inizio lezioni 2027 · Tutti i diritti riservati",
+  },
+  pt:{
+    hero_badge:"Ação Social Exclusiva · Membros E.R.H.D.",
+    hero_h1:"Educação de excelência<br><em>acessível a todos os membros</em>",
+    hero_sub:"Uma escola global gratuita, com o mesmo nível dos melhores institutos do mundo. Exclusiva para membros E.R.H.D. em cinco continentes. Início das aulas: 2027.",
+    stat_cont:"Continentes",stat_nat:"Nacionalidades",stat_ratio:"Prof / Aluno",stat_start:"Início das aulas",stat_free:"Gratuita",
+    login_text:"<strong>É membro E.R.H.D.?</strong> Acesse a plataforma educacional completa: aulas, materiais, professores e certificação internacional.",
+    login_btn:"Acesso Membros →",
+    s_about_label:"I — Quem Somos",s_about_title:"Uma escola sem precedentes",
+    s_about_body:"ELIARH.IT é a primeira escola global gratuita de excelência reservada aos membros E.R.H.D. Com currículo alinhado ao Bacharelado Internacional (IB) e reconhecimento nacional em cada país, oferecemos formação de alto nível do primário ao diploma — completamente gratuita, como ação social da organização.",
+    s_about_highlight:"Todo membro E.R.H.D. e seus filhos têm direito a esta formação, independentemente de sua condição econômica ou localização geográfica. O acesso é feito via login exclusivo na plataforma.",
+    s_mission_label:"II — Missão",s_mission_title:"Quatro pilares fundadores",
+    m1_title:"Excelência Acessível",m1_body:"Educação equivalente aos melhores institutos do mundo, sem custo para o membro. O conhecimento não pode ser privilégio de poucos.",
+    m2_title:"Certificação Internacional",m2_body:"Diplomas reconhecidos: IB (International Baccalaureate) e certificação nacional em cada país onde atuam os membros E.R.H.D.",
+    m3_title:"Formação Integral",m3_body:"Ciências, artes, idiomas, tecnologia e dimensão espiritual — um percurso que desenvolve o potencial completo do indivíduo.",
+    m4_title:"Rede Civilizacional",m4_body:"1,5 milhão de famílias em 5 continentes, conectadas por uma mesma visão formativa. Uma rede que durará gerações.",
+    s_curr_label:"III — Currículo",s_curr_title:"Do Primário ao Diploma",
+    s_curr_intro:"Quatro etapas de formação. Cada etapa integra matérias acadêmicas de nível IB, uma dimensão formativa exclusiva ELIARH, artes, esportes e ao menos três idiomas.",
+    th_stage:"Etapa",th_age:"Idade",th_subjects:"Matérias Acadêmicas (IB)",th_wisdom:"Percurso ELIARH",th_arts:"Artes e Esportes",th_lang:"Idiomas",th_fee:"Custo",
+    free_label:"Gratuita",
+    st1_tag:"Júniors",st1_name:"Primário Bilíngue",st1_sub:"Matemática · Ciências · História · Geografia · Informática · Literatura · PSHE",st1_wis:"Mitologia Comparada · Símbolos e Arquétipos · Arte Sagrada",st1_arts:"Música · Artes Visuais · Natação · Dança · Artes Marciais",st1_lang:"Língua materna + Inglês + Francês",
+    st2_tag:"Cadetes",st2_name:"Ginásio",st2_sub:"Mat. Avançada · Biologia · Física · Química · História Global · Informática",st2_wis:"Textos Sagrados · Tradições Orientais e Ocidentais · Filosofia da Consciência",st2_arts:"Teatro · Orquestra · Artes Plásticas · Esportes",st2_lang:"+ 3º idioma (ES / DE / AR / ZH / IT)",
+    st3_tag:"Pré-Bac",st3_name:"Ensino Médio — Pré-Bac",st3_sub:"Mat. HL · Bio · Química · Física · Informática · Economia-Política · TOK prep",st3_wis:"Cosmologia · Kabbalah · Alquimia · Hermetismo · Liderança Espiritual",st3_arts:"Cinema · Arquitetura · Dança Contemporânea · Atletismo",st3_lang:"+ 4º idioma opcional · Língua materna avançada",
+    st4_tag:"Sêniors",st4_name:"Diploma — IB / Bac",st4_sub:"IB Diploma (6 disciplinas HL/SL) · Extended Essay · TOK · CAS · Prep universitária",st4_wis:"Sagrado e Poder · Fundação de Instituições · Projeto Pessoal ELIARH · Diplomacia Espiritual",st4_arts:"Atletismo avançado · Projeto artístico individual · Serviço civilizacional",st4_lang:"Certificado Bilíngue ELIARH (Ing + Fr/Port + língua regional)",
+    s_mod_label:"IV — Modalidades",s_mod_title:"Três modalidades de ensino",s_mod_intro:"A escola opera em três modalidades complementares, garantindo acesso a todos os membros independentemente de sua localização geográfica.",
+    mod1_title:"Online — API",mod1_body:"Aulas conduzidas por inteligências artificiais especializadas (Claude, GPT, Gemini) treinadas para cada disciplina. Disponível 24h, em 5 idiomas, em todos os dispositivos.",
+    mod2_title:"Online — Humano",mod2_body:"Professores qualificados em sessões ao vivo, tutoria individual e correção de trabalhos. Interação real com especialistas internacionais.",
+    mod3_title:"Presencial",mod3_body:"Centros de presença física nos 5 continentes, para laboratórios, exames certificados, imersões culturais e atividades práticas.",
+    s_global_label:"V — Presença Global",s_global_title:"Cinco continentes, uma formação",s_global_intro:"Os membros E.R.H.D. estão em todo o mundo. A escola os alcança onde quer que estejam — no idioma local, com certificação reconhecida em seu país.",
+    c1_name:"Europa",c1_note:"Sede principal · Suíça e Portugal · Tradições ocidentais",
+    c2_name:"Américas",c2_note:"Brasil e EUA · Portal digital · Tradições atlânticas",
+    c3_name:"Ásia",c3_note:"Índia e Japão · Vedanta · Budismo · Filosofia oriental",
+    c4_name:"África",c4_note:"Marrocos e Etiópia · Tradições herméticas · Gnose africana",
+    c5_name:"Oceania",c5_note:"Austrália · Tradições aborígenes · Sabedoria primordial",
+    s_access_label:"VI — Acesso",s_access_title:"Como acessar",
+    acc_box1_title:"Requisitos de Acesso",acc_r1k:"Condição",acc_r1v:"Membro E.R.H.D. ativo",acc_r2k:"Custo",acc_r2v:"Gratuita — Ação Social",acc_r3k:"Idade mínima",acc_r3v:"8 anos (primário)",acc_r4k:"Idiomas",acc_r4v:"IT / PT / EN / ES / FR",acc_r5k:"Início das aulas",acc_r5v:"2027",
+    acc_box2_title:"Certificações",acc2_r1k:"Diploma internacional",acc2_r1v:"IB — International Baccalaureate",acc2_r2k:"Reconhecimento nacional",acc2_r2v:"Em cada país dos membros",acc2_r3k:"Certificado exclusivo",acc2_r3v:"Diploma ELIARH Magisterium",acc2_r4k:"Famílias habilitadas",acc2_r4v:"1,5 milhão · 5 continentes",acc2_r5k:"Razão professor / aluno",acc2_r5v:"1 : 3",
+    s_access_note:"O site é visível a todos. O acesso ao conteúdo educacional, à plataforma de aulas e à matrícula é reservado exclusivamente aos membros E.R.H.D. com credenciais ativas.",
+    footer_note:"Início das aulas 2027 · Todos os direitos reservados",
+  },
+  en:{
+    hero_badge:"Exclusive Social Action · E.R.H.D. Members",
+    hero_h1:"Excellence in education<br><em>accessible to all members</em>",
+    hero_sub:"A free global school, at the same level as the world's finest institutions. Exclusively for E.R.H.D. members across five continents. Classes begin: 2027.",
+    stat_cont:"Continents",stat_nat:"Nationalities",stat_ratio:"Teacher / Student",stat_start:"Classes begin",stat_free:"Free of charge",
+    login_text:"<strong>Are you an E.R.H.D. member?</strong> Access the full educational platform: classes, materials, teachers and international certification.",
+    login_btn:"Member Login →",
+    s_about_label:"I — About Us",s_about_title:"An unprecedented school",
+    s_about_body:"ELIARH.IT is the world's first free global school of excellence reserved for E.R.H.D. members. With a curriculum aligned to the International Baccalaureate (IB) and national recognition in each country, we offer high-level education from primary school through to diploma — completely free, as a social action of the organisation.",
+    s_about_highlight:"Every E.R.H.D. member and their children are entitled to this education, regardless of their economic situation or geographic location. Access is via exclusive login on the platform.",
+    s_mission_label:"II — Mission",s_mission_title:"Four founding pillars",
+    m1_title:"Accessible Excellence",m1_body:"Education equivalent to the world's finest institutions, at no cost to the member. Knowledge must not be the privilege of the few.",
+    m2_title:"International Certification",m2_body:"Recognised diplomas: IB (International Baccalaureate) and national certification in each country where E.R.H.D. members are present.",
+    m3_title:"Integral Formation",m3_body:"Sciences, arts, languages, technology and spiritual dimension — a path that develops the individual's full potential.",
+    m4_title:"Civilisational Network",m4_body:"1.5 million families across 5 continents, connected by a shared educational vision. A network that will endure for generations.",
+    s_curr_label:"III — Curriculum",s_curr_title:"From Primary to Diploma",
+    s_curr_intro:"Four stages of formation. Each stage integrates IB-level academic subjects, an exclusive ELIARH formation track, arts, sports and at least three languages.",
+    th_stage:"Stage",th_age:"Age",th_subjects:"Academic Subjects (IB)",th_wisdom:"ELIARH Track",th_arts:"Arts & Sports",th_lang:"Languages",th_fee:"Cost",
+    free_label:"Free",
+    st1_tag:"Juniors",st1_name:"Primary Bilingual",st1_sub:"Mathematics · Sciences · History · Geography · ICT · Literature · PSHE",st1_wis:"Comparative Mythology · Symbols & Archetypes · Sacred Art",st1_arts:"Music · Visual Arts · Swimming · Dance · Martial Arts",st1_lang:"Mother tongue + English + French",
+    st2_tag:"Cadets",st2_name:"Lower Secondary",st2_sub:"Adv. Mathematics · Biology · Physics · Chemistry · Global History · ICT",st2_wis:"Sacred Texts · Eastern & Western Traditions · Philosophy of Consciousness",st2_arts:"Theatre · Orchestra · Visual Arts · Sports",st2_lang:"+ 3rd language (ES / DE / AR / ZH / IT)",
+    st3_tag:"Pre-Bac",st3_name:"Upper Secondary — Pre-Bac",st3_sub:"Maths HL · Biology · Chemistry · Physics · Computer Sci · Economics · TOK prep",st3_wis:"Cosmology · Kabbalah · Alchemy · Hermetism · Spiritual Leadership",st3_arts:"Film · Architecture · Contemporary Dance · Athletics",st3_lang:"+ 4th language optional · Advanced mother tongue",
+    st4_tag:"Seniors",st4_name:"Diploma — IB / Bac",st4_sub:"Full IB Diploma (6 subjects HL/SL) · Extended Essay · TOK · CAS · University prep",st4_wis:"Sacred & Power · Founding Institutions · Personal ELIARH Project · Spiritual Diplomacy",st4_arts:"Advanced athletics · Individual artistic project · Civilisational service",st4_lang:"ELIARH Bilingual Certificate (Eng + Fr/Port + regional language)",
+    s_mod_label:"IV — Modalities",s_mod_title:"Three learning modalities",s_mod_intro:"The school operates in three complementary modalities, ensuring access for all members regardless of geographic location.",
+    mod1_title:"Online — API",mod1_body:"Classes led by specialised artificial intelligences (Claude, GPT, Gemini) trained for each subject. Available 24h, in 5 languages, on all devices.",
+    mod2_title:"Online — Human",mod2_body:"Qualified teachers in live sessions, individual tutoring and assignment marking. Real interaction with international specialists.",
+    mod3_title:"In-Person",mod3_body:"Physical presence centres on 5 continents, for laboratories, certified exams, cultural immersions and practical activities.",
+    s_global_label:"V — Global Presence",s_global_title:"Five continents, one formation",s_global_intro:"E.R.H.D. members are found all over the world. The school reaches them wherever they are — in their local language, with certification recognised in their country.",
+    c1_name:"Europe",c1_note:"Main hub · Switzerland & Portugal · Western traditions",
+    c2_name:"Americas",c2_note:"Brazil & USA · Digital portal · Atlantic traditions",
+    c3_name:"Asia",c3_note:"India & Japan · Vedanta · Buddhism · Eastern philosophy",
+    c4_name:"Africa",c4_note:"Morocco & Ethiopia · Hermetic traditions · African Gnosis",
+    c5_name:"Oceania",c5_note:"Australia · Aboriginal traditions · Primordial wisdom",
+    s_access_label:"VI — Access",s_access_title:"How to access",
+    acc_box1_title:"Access Requirements",acc_r1k:"Condition",acc_r1v:"Active E.R.H.D. member",acc_r2k:"Cost",acc_r2v:"Free — Social Action",acc_r3k:"Minimum age",acc_r3v:"8 years (primary)",acc_r4k:"Languages",acc_r4v:"IT / PT / EN / ES / FR",acc_r5k:"Classes begin",acc_r5v:"2027",
+    acc_box2_title:"Certifications",acc2_r1k:"International diploma",acc2_r1v:"IB — International Baccalaureate",acc2_r2k:"National recognition",acc2_r2v:"In each member's country",acc2_r3k:"Exclusive certificate",acc2_r3v:"ELIARH Magisterium Diploma",acc2_r4k:"Entitled families",acc2_r4v:"1.5 million · 5 continents",acc2_r5k:"Teacher / student ratio",acc2_r5v:"1 : 3",
+    s_access_note:"The website is publicly visible. Access to educational content, the classes platform and enrolment is reserved exclusively for E.R.H.D. members with active credentials.",
+    footer_note:"Classes begin 2027 · All rights reserved",
+  },
+  es:{
+    hero_badge:"Acción Social Exclusiva · Miembros E.R.H.D.",
+    hero_h1:"Educación de excelencia<br><em>accesible a todos los miembros</em>",
+    hero_sub:"Una escuela global gratuita, con el mismo nivel de los mejores institutos del mundo. Exclusiva para miembros E.R.H.D. en cinco continentes. Inicio de clases: 2027.",
+    stat_cont:"Continentes",stat_nat:"Nacionalidades",stat_ratio:"Prof / Alumno",stat_start:"Inicio de clases",stat_free:"Gratuita",
+    login_text:"<strong>¿Es miembro E.R.H.D.?</strong> Acceda a la plataforma educativa completa: clases, materiales, profesores y certificación internacional.",
+    login_btn:"Acceso Miembros →",
+    s_about_label:"I — Quiénes Somos",s_about_title:"Una escuela sin precedentes",
+    s_about_body:"ELIARH.IT es la primera escuela global gratuita de excelencia reservada a los miembros E.R.H.D. Con un currículo alineado al Bachillerato Internacional (IB) y reconocimiento nacional en cada país, ofrecemos formación de alto nivel desde primaria hasta el diploma — completamente gratuita, como acción social de la organización.",
+    s_about_highlight:"Todo miembro E.R.H.D. y sus hijos tienen derecho a esta formación, independientemente de su condición económica o ubicación geográfica. El acceso se realiza mediante login exclusivo en la plataforma.",
+    s_mission_label:"II — Misión",s_mission_title:"Cuatro pilares fundadores",
+    m1_title:"Excelencia Accesible",m1_body:"Educación equivalente a los mejores institutos del mundo, sin costo para el miembro. El conocimiento no puede ser privilegio de pocos.",
+    m2_title:"Certificación Internacional",m2_body:"Diplomas reconocidos: IB (Bachillerato Internacional) y certificación nacional en cada país donde operan los miembros E.R.H.D.",
+    m3_title:"Formación Integral",m3_body:"Ciencias, artes, idiomas, tecnología y dimensión espiritual — un recorrido que desarrolla el potencial completo del individuo.",
+    m4_title:"Red Civilizadora",m4_body:"1,5 millones de familias en 5 continentes, conectadas por una misma visión formativa. Una red que durará generaciones.",
+    s_curr_label:"III — Currículo",s_curr_title:"De Primaria al Diploma",
+    s_curr_intro:"Cuatro etapas de formación. Cada etapa integra materias académicas de nivel IB, una dimensión formativa exclusiva ELIARH, artes, deportes y al menos tres idiomas.",
+    th_stage:"Etapa",th_age:"Edad",th_subjects:"Materias Académicas (IB)",th_wisdom:"Recorrido ELIARH",th_arts:"Artes y Deportes",th_lang:"Idiomas",th_fee:"Costo",
+    free_label:"Gratuita",
+    st1_tag:"Juniors",st1_name:"Primaria Bilingüe",st1_sub:"Matemáticas · Ciencias · Historia · Geografía · Informática · Literatura · PSHE",st1_wis:"Mitología Comparada · Símbolos y Arquetipos · Arte Sagrado",st1_arts:"Música · Artes Visuales · Natación · Danza · Artes Marciales",st1_lang:"Lengua materna + Inglés + Francés",
+    st2_tag:"Cadetes",st2_name:"Secundaria",st2_sub:"Mat. Avanzada · Biología · Física · Química · Historia Global · Informática",st2_wis:"Textos Sagrados · Tradiciones Orientales y Occidentales · Filosofía de la Conciencia",st2_arts:"Teatro · Orquesta · Artes Plásticas · Deportes",st2_lang:"+ 3er idioma (IT / DE / AR / ZH / PT)",
+    st3_tag:"Pre-Bac",st3_name:"Bachillerato — Pre-Bac",st3_sub:"Mat. HL · Bio · Química · Física · Informática · Economía-Política · TOK prep",st3_wis:"Cosmología · Kabbalah · Alquimia · Hermetismo · Liderazgo Espiritual",st3_arts:"Cine · Arquitectura · Danza Contemporánea · Atletismo",st3_lang:"+ 4º idioma opcional · Lengua materna avanzada",
+    st4_tag:"Seniors",st4_name:"Diploma — IB / Bac",st4_sub:"IB Diploma completo (6 materias HL/SL) · Extended Essay · TOK · CAS · Prep universitaria",st4_wis:"Sagrado y Poder · Fundación de Instituciones · Proyecto Personal ELIARH · Diplomacia Espiritual",st4_arts:"Atletismo avanzado · Proyecto artístico individual · Servicio civilizador",st4_lang:"Certificado Bilingüe ELIARH (Ing + Fr/Port + idioma regional)",
+    s_mod_label:"IV — Modalidades",s_mod_title:"Tres modalidades de aprendizaje",s_mod_intro:"La escuela opera en tres modalidades complementarias, garantizando acceso a todos los miembros independientemente de su ubicación geográfica.",
+    mod1_title:"Online — API",mod1_body:"Clases impartidas por inteligencias artificiales especializadas (Claude, GPT, Gemini) entrenadas para cada disciplina. Disponible 24h, en 5 idiomas, en todos los dispositivos.",
+    mod2_title:"Online — Humano",mod2_body:"Profesores cualificados en sesiones en vivo, tutoría individual y corrección de trabajos. Interacción real con especialistas internacionales.",
+    mod3_title:"Presencial",mod3_body:"Centros de presencia física en los 5 continentes, para laboratorios, exámenes certificados, inmersiones culturales y actividades prácticas.",
+    s_global_label:"V — Presencia Global",s_global_title:"Cinco continentes, una formación",s_global_intro:"Los miembros E.R.H.D. se encuentran en todo el mundo. La escuela los alcanza donde estén — en su idioma local, con certificación reconocida en su país.",
+    c1_name:"Europa",c1_note:"Sede principal · Suiza y Portugal · Tradiciones occidentales",
+    c2_name:"Américas",c2_note:"Brasil y EE.UU. · Portal digital · Tradiciones atlánticas",
+    c3_name:"Asia",c3_note:"India y Japón · Vedanta · Budismo · Filosofía oriental",
+    c4_name:"África",c4_note:"Marruecos y Etiopía · Tradiciones herméticas · Gnosis africana",
+    c5_name:"Oceanía",c5_note:"Australia · Tradiciones aborígenes · Sabiduría primordial",
+    s_access_label:"VI — Acceso",s_access_title:"Cómo acceder",
+    acc_box1_title:"Requisitos de Acceso",acc_r1k:"Condición",acc_r1v:"Miembro E.R.H.D. activo",acc_r2k:"Costo",acc_r2v:"Gratuita — Acción Social",acc_r3k:"Edad mínima",acc_r3v:"8 años (primaria)",acc_r4k:"Idiomas",acc_r4v:"IT / PT / EN / ES / FR",acc_r5k:"Inicio de clases",acc_r5v:"2027",
+    acc_box2_title:"Certificaciones",acc2_r1k:"Diploma internacional",acc2_r1v:"IB — Bachillerato Internacional",acc2_r2k:"Reconocimiento nacional",acc2_r2v:"En cada país de los miembros",acc2_r3k:"Certificado exclusivo",acc2_r3v:"Diploma ELIARH Magisterium",acc2_r4k:"Familias habilitadas",acc2_r4v:"1,5 millones · 5 continentes",acc2_r5k:"Ratio profesor / alumno",acc2_r5v:"1 : 3",
+    s_access_note:"El sitio es visible para todos. El acceso al contenido educativo, la plataforma de clases y la matrícula está reservado exclusivamente a los miembros E.R.H.D. con credenciales activas.",
+    footer_note:"Inicio de clases 2027 · Todos los derechos reservados",
+  },
+  fr:{
+    hero_badge:"Action Sociale Exclusive · Membres E.R.H.D.",
+    hero_h1:"L'éducation d'excellence<br><em>accessible à tous les membres</em>",
+    hero_sub:"Une école mondiale gratuite, au même niveau que les meilleurs instituts du monde. Réservée aux membres E.R.H.D. sur cinq continents. Début des cours : 2027.",
+    stat_cont:"Continents",stat_nat:"Nationalités",stat_ratio:"Prof / Élève",stat_start:"Début des cours",stat_free:"Gratuite",
+    login_text:"<strong>Êtes-vous membre E.R.H.D. ?</strong> Accédez à la plateforme éducative complète : cours, matériaux, professeurs et certification internationale.",
+    login_btn:"Accès Membres →",
+    s_about_label:"I — Qui Sommes-Nous",s_about_title:"Une école sans précédent",
+    s_about_body:"ELIARH.IT est la première école mondiale gratuite d'excellence réservée aux membres E.R.H.D. Avec un programme aligné sur le Baccalauréat International (IB) et une reconnaissance nationale dans chaque pays, nous offrons une formation de haut niveau du primaire au diplôme — entièrement gratuite, en tant qu'action sociale de l'organisation.",
+    s_about_highlight:"Chaque membre E.R.H.D. et ses enfants ont droit à cette formation, indépendamment de leur situation économique ou de leur localisation géographique. L'accès se fait via un login exclusif sur la plateforme.",
+    s_mission_label:"II — Mission",s_mission_title:"Quatre piliers fondateurs",
+    m1_title:"Excellence Accessible",m1_body:"Une éducation équivalente aux meilleurs instituts du monde, sans frais pour le membre. La connaissance ne doit pas être le privilège de quelques-uns.",
+    m2_title:"Certification Internationale",m2_body:"Diplômes reconnus : IB (Baccalauréat International) et certification nationale dans chaque pays où les membres E.R.H.D. sont présents.",
+    m3_title:"Formation Intégrale",m3_body:"Sciences, arts, langues, technologie et dimension spirituelle — un parcours qui développe le potentiel complet de l'individu.",
+    m4_title:"Réseau Civilisationnel",m4_body:"1,5 million de familles sur 5 continents, unies par une même vision éducative. Un réseau qui durera des générations.",
+    s_curr_label:"III — Programme",s_curr_title:"Du Primaire au Diplôme",
+    s_curr_intro:"Quatre étapes de formation. Chaque étape intègre des matières académiques de niveau IB, une dimension formative exclusive ELIARH, des arts, des sports et au moins trois langues.",
+    th_stage:"Étape",th_age:"Âge",th_subjects:"Matières Académiques (IB)",th_wisdom:"Parcours ELIARH",th_arts:"Arts et Sports",th_lang:"Langues",th_fee:"Coût",
+    free_label:"Gratuite",
+    st1_tag:"Juniors",st1_name:"Primaire Bilingue",st1_sub:"Mathématiques · Sciences · Histoire · Géographie · Informatique · Littérature · PSHE",st1_wis:"Mythologie Comparée · Symboles et Archétypes · Art Sacré",st1_arts:"Musique · Arts Visuels · Natation · Danse · Arts Martiaux",st1_lang:"Langue maternelle + Anglais + Français",
+    st2_tag:"Cadets",st2_name:"Collège",st2_sub:"Math. Avancées · Biologie · Physique · Chimie · Histoire Globale · Informatique",st2_wis:"Textes Sacrés · Traditions Orientales et Occidentales · Philosophie de la Conscience",st2_arts:"Théâtre · Orchestre · Arts Plastiques · Sports",st2_lang:"+ 3e langue (ES / DE / AR / ZH / IT)",
+    st3_tag:"Pré-Bac",st3_name:"Lycée — Pré-Bac",st3_sub:"Math. HL · Bio · Chimie · Physique · Informatique · Économie-Politique · TOK prép",st3_wis:"Cosmologie · Kabbale · Alchimie · Hermétisme · Leadership Spirituel",st3_arts:"Cinéma · Architecture · Danse Contemporaine · Athlétisme",st3_lang:"+ 4e langue en option · Langue maternelle avancée",
+    st4_tag:"Seniors",st4_name:"Diplôme — IB / Bac",st4_sub:"IB Diplôme complet (6 matières HL/SL) · Extended Essay · TOK · CAS · Prép universitaire",st4_wis:"Sacré et Pouvoir · Fondation d'Institutions · Projet Personnel ELIARH · Diplomatie Spirituelle",st4_arts:"Athlétisme avancé · Projet artistique individuel · Service civilisationnel",st4_lang:"Certificat Bilingue ELIARH (Ang + Fr/Port + langue régionale)",
+    s_mod_label:"IV — Modalités",s_mod_title:"Trois modalités d'apprentissage",s_mod_intro:"L'école fonctionne selon trois modalités complémentaires, garantissant l'accès à tous les membres quelle que soit leur localisation géographique.",
+    mod1_title:"En ligne — API",mod1_body:"Cours dispensés par des intelligences artificielles spécialisées (Claude, GPT, Gemini) entraînées pour chaque discipline. Disponible 24h/24, en 5 langues, sur tous les appareils.",
+    mod2_title:"En ligne — Humain",mod2_body:"Professeurs qualifiés en sessions en direct, tutorat individuel et correction des travaux. Interaction réelle avec des spécialistes internationaux.",
+    mod3_title:"En Présentiel",mod3_body:"Centres de présence physique sur les 5 continents, pour les laboratoires, examens certifiés, immersions culturelles et activités pratiques.",
+    s_global_label:"V — Présence Mondiale",s_global_title:"Cinq continents, une formation",s_global_intro:"Les membres E.R.H.D. se trouvent partout dans le monde. L'école les rejoint où qu'ils soient — dans leur langue locale, avec une certification reconnue dans leur pays.",
+    c1_name:"Europe",c1_note:"Siège principal · Suisse et Portugal · Traditions occidentales",
+    c2_name:"Amériques",c2_note:"Brésil et États-Unis · Portail numérique · Traditions atlantiques",
+    c3_name:"Asie",c3_note:"Inde et Japon · Védanta · Bouddhisme · Philosophie orientale",
+    c4_name:"Afrique",c4_note:"Maroc et Éthiopie · Traditions hermétiques · Gnose africaine",
+    c5_name:"Océanie",c5_note:"Australie · Traditions aborigènes · Sagesse primordiale",
+    s_access_label:"VI — Accès",s_access_title:"Comment accéder",
+    acc_box1_title:"Conditions d'Accès",acc_r1k:"Condition",acc_r1v:"Membre E.R.H.D. actif",acc_r2k:"Coût",acc_r2v:"Gratuite — Action Sociale",acc_r3k:"Âge minimum",acc_r3v:"8 ans (primaire)",acc_r4k:"Langues",acc_r4v:"IT / PT / EN / ES / FR",acc_r5k:"Début des cours",acc_r5v:"2027",
+    acc_box2_title:"Certifications",acc2_r1k:"Diplôme international",acc2_r1v:"IB — Baccalauréat International",acc2_r2k:"Reconnaissance nationale",acc2_r2v:"Dans chaque pays des membres",acc2_r3k:"Certificat exclusif",acc2_r3v:"Diplôme ELIARH Magisterium",acc2_r4k:"Familles habilitées",acc2_r4v:"1,5 million · 5 continents",acc2_r5k:"Ratio professeur / élève",acc2_r5v:"1 : 3",
+    s_access_note:"Le site est visible par tous. L'accès au contenu éducatif, à la plateforme de cours et à l'inscription est réservé exclusivement aux membres E.R.H.D. avec des identifiants actifs.",
+    footer_note:"Début des cours 2027 · Tous droits réservés",
+  }
+};
+
+const NAV={
+  it:["Chi Siamo","Missione","Curriculum","Modalità","Presenza","Accesso"],
+  pt:["Quem Somos","Missão","Currículo","Modalidades","Presença","Acesso"],
+  en:["About","Mission","Curriculum","Modalities","Global","Access"],
+  es:["Quiénes Somos","Misión","Currículo","Modalidades","Presencia","Acceso"],
+  fr:["Qui Sommes-Nous","Mission","Programme","Modalités","Présence","Accès"]
+};
+
+function setLang(lang){
+  document.getElementById('html-root').lang=lang==='pt'?'pt-BR':lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
+  const d=T[lang];
+  document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k]!==undefined)el.innerHTML=d[k];});
+  document.querySelectorAll('[data-nav]').forEach((el,i)=>el.textContent=NAV[lang][i]);
+}
+
+setLang('it');
+</script>
+</body>
+</html>
