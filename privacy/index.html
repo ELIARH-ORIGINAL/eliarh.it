@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELIARH.IT — Privacy Policy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --menu-bg:#4a5568;--menu-hover:#2d3748;--menu-text:#f7f3ee;--menu-active:#C9A84C;
+  --body-bg:#f5f0e8;--card-bg:#f0ead8;--card-border:#d6ccb4;
+  --text-dark:#1a1a1a;--text-mid:#3a3a3a;--text-muted:#6a6a6a;
+  --gold:#C9A84C;--gold-d:#9a7a30;--radius:6px;
+}
+body{font-family:Arial,sans-serif;font-size:14px;background:var(--body-bg);color:var(--text-dark);line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+header{background:var(--menu-bg);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;}
+.nav-logo{font-size:1.3rem;font-weight:bold;color:var(--menu-active);letter-spacing:.08em;}
+.nav-logo span{color:var(--menu-text);font-weight:normal;font-size:1rem;margin-left:.4rem;}
+.lang-switcher{display:flex;gap:.3rem;}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.25);color:var(--menu-text);font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;letter-spacing:.08em;padding:4px 9px;border-radius:3px;cursor:pointer;transition:background .2s;}
+.lang-btn:hover,.lang-btn.active{background:var(--gold);border-color:var(--gold);color:#1a1a1a;}
+.construction{background:#c0392b;color:#fff;text-align:center;padding:8px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.1em;}
+main{max-width:860px;margin:0 auto;padding:3rem 2rem 5rem;}
+.page-label{font-size:.65rem;font-weight:bold;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.6rem;}
+h1{font-size:1.6rem;font-weight:bold;color:var(--text-dark);margin-bottom:.5rem;border-bottom:2px solid var(--gold);padding-bottom:.5rem;display:inline-block;}
+.updated{font-size:.78rem;color:var(--text-muted);margin:1rem 0 2rem;}
+h2{font-size:1rem;font-weight:bold;color:var(--text-dark);margin:2rem 0 .5rem;text-transform:uppercase;letter-spacing:.06em;}
+p{font-size:.9rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.8;}
+ul{padding-left:1.5rem;margin-bottom:1rem;}
+ul li{font-size:.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:.3rem;}
+.highlight-box{background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.2rem 1.5rem;margin:1.5rem 0;}
+.highlight-box p{margin:0;font-size:.88rem;}
+.back-link{display:inline-block;margin-bottom:2rem;font-size:.82rem;color:var(--gold-d);font-weight:bold;text-decoration:underline;}
+footer{background:var(--menu-hover);color:rgba(247,243,238,0.65);text-align:center;padding:2rem;font-size:.78rem;line-height:1.8;}
+footer strong{color:var(--menu-active);}
+footer a{color:var(--menu-active);text-decoration:underline;font-size:.75rem;}
+@media(max-width:768px){.nav-top{padding:0 1.2rem;}main{padding:2rem 1.2rem 4rem;}}
+</style>
+</head>
+<body>
+
+<div class="construction">⚠ SITE EM CONSTRUÇÃO</div>
+
+<header>
+  <div class="nav-top">
+    <a href="/"><div class="nav-logo">ELIARH<span>.IT</span></div></a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('it')">IT</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="/" data-t="back"></a>
+  <p class="page-label" data-t="label"></p>
+  <h1 data-t="title"></h1>
+  <p class="updated" data-t="updated"></p>
+
+  <div class="highlight-box"><p data-t="intro"></p></div>
+
+  <h2 data-t="s1_title"></h2>
+  <p data-t="s1_body"></p>
+
+  <h2 data-t="s2_title"></h2>
+  <p data-t="s2_body"></p>
+  <ul>
+    <li data-t="s2_l1"></li>
+    <li data-t="s2_l2"></li>
+    <li data-t="s2_l3"></li>
+    <li data-t="s2_l4"></li>
+    <li data-t="s2_l5"></li>
+  </ul>
+
+  <h2 data-t="s3_title"></h2>
+  <p data-t="s3_body"></p>
+
+  <h2 data-t="s4_title"></h2>
+  <p data-t="s4_body"></p>
+  <ul>
+    <li data-t="s4_l1"></li>
+    <li data-t="s4_l2"></li>
+    <li data-t="s4_l3"></li>
+    <li data-t="s4_l4"></li>
+  </ul>
+
+  <h2 data-t="s5_title"></h2>
+  <p data-t="s5_body"></p>
+
+  <h2 data-t="s6_title"></h2>
+  <p data-t="s6_body"></p>
+
+  <h2 data-t="s7_title"></h2>
+  <p data-t="s7_body"></p>
+
+  <h2 data-t="s8_title"></h2>
+  <p data-t="s8_body"></p>
+
+  <h2 data-t="s9_title"></h2>
+  <p data-t="s9_body"></p>
+
+  <h2 data-t="s10_title"></h2>
+  <p data-t="s10_body"></p>
+</main>
+
+<footer>
+  <strong>ELIARH.IT</strong> — Azione Sociale E.R.H.D.<br>
+  <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms/">Terms of Use</a>
+</footer>
+
+<script>
+const T={
+  it:{
+    back:"← Torna alla Home",
+    label:"Informativa sulla Privacy",
+    title:"Privacy Policy",
+    updated:"Ultimo aggiornamento: Aprile 2026 · Versione 1.0",
+    intro:"ELIARH.IT rispetta la privacy dei propri utenti e dei membri E.R.H.D. La presente informativa è redatta in conformità al Regolamento UE 2016/679 (GDPR), al Codice Privacy italiano (D.Lgs. 196/2003 e s.m.i.), alla LGPD brasiliana (Lei 13.709/2018) e alle normative applicabili nei paesi di presenza dell'organizzazione.",
+    s1_title:"1. Titolare del Trattamento",
+    s1_body:"Il titolare del trattamento dei dati personali è l'organizzazione ELIARH / E.R.H.D., raggiungibile tramite il sito eliarh.it. Per qualsiasi richiesta relativa alla privacy, è possibile contattare il responsabile tramite i canali ufficiali del portale.",
+    s2_title:"2. Dati Raccolti",
+    s2_body:"ELIARH.IT raccoglie esclusivamente i dati necessari per l'accesso alla piattaforma educativa da parte dei membri E.R.H.D. I dati trattati possono includere:",
+    s2_l1:"Dati di identificazione: nome, cognome, nazionalità",
+    s2_l2:"Dati di accesso: credenziali di login del membro E.R.H.D.",
+    s2_l3:"Dati educativi: progressi, certificazioni e attività scolastiche",
+    s2_l4:"Dati tecnici: indirizzo IP, tipo di browser, dispositivo utilizzato",
+    s2_l5:"Dati di navigazione: pagine visitate, durata della sessione",
+    s3_title:"3. Finalità del Trattamento",
+    s3_body:"I dati sono trattati esclusivamente per: erogare i servizi educativi della piattaforma; gestire l'accesso riservato ai membri E.R.H.D.; emettere certificazioni e diplomi; adempiere agli obblighi di legge; migliorare la qualità dei servizi offerti.",
+    s4_title:"4. Diritti dell'Utente (GDPR e normative equivalenti)",
+    s4_body:"In conformità al GDPR e alle normative equivalenti applicabili, ogni utente ha il diritto di:",
+    s4_l1:"Accedere ai propri dati personali",
+    s4_l2:"Richiedere la rettifica o la cancellazione dei dati",
+    s4_l3:"Opporsi al trattamento o richiederne la limitazione",
+    s4_l4:"Richiedere la portabilità dei dati",
+    s5_title:"5. Conservazione dei Dati",
+    s5_body:"I dati personali sono conservati per il tempo strettamente necessario alle finalità per cui sono stati raccolti, nel rispetto dei termini previsti dalla normativa applicabile. I dati educativi possono essere conservati per un periodo più lungo ai fini della certificazione accademica.",
+    s6_title:"6. Cookie e Tecnologie di Tracciamento",
+    s6_body:"Il sito utilizza esclusivamente cookie tecnici necessari al funzionamento della piattaforma. Non vengono utilizzati cookie di profilazione o di marketing di terze parti. L'utente può disabilitare i cookie nelle impostazioni del proprio browser.",
+    s7_title:"7. Trasferimento Internazionale dei Dati",
+    s7_body:"In ragione della natura globale dell'organizzazione E.R.H.D., i dati possono essere trattati in paesi al di fuori dell'Unione Europea. In tali casi, ELIARH.IT garantisce l'adozione di adeguate misure di salvaguardia conformi al GDPR.",
+    s8_title:"8. Sicurezza dei Dati",
+    s8_body:"ELIARH.IT adotta misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, perdita, distruzione o divulgazione. La piattaforma opera su infrastruttura propria con protocolli di sicurezza aggiornati.",
+    s9_title:"9. Minori",
+    s9_body:"La piattaforma educativa è accessibile anche a minori di età, esclusivamente sotto la responsabilità e con il consenso dei genitori o tutori legali membri E.R.H.D. I dati dei minori sono trattati con misure di protezione rafforzate.",
+    s10_title:"10. Modifiche alla Privacy Policy",
+    s10_body:"ELIARH.IT si riserva il diritto di aggiornare la presente informativa. Le modifiche saranno pubblicate su questa pagina con indicazione della data di aggiornamento. Si consiglia di consultare periodicamente questa pagina.",
+  },
+  pt:{
+    back:"← Voltar à Home",
+    label:"Política de Privacidade",
+    title:"Política de Privacidade",
+    updated:"Última atualização: Abril de 2026 · Versão 1.0",
+    intro:"ELIARH.IT respeita a privacidade de seus usuários e dos membros E.R.H.D. Esta política foi elaborada em conformidade com o Regulamento UE 2016/679 (GDPR), a LGPD brasileira (Lei 13.709/2018), o Código de Privacidade italiano e as legislações aplicáveis nos países de presença da organização.",
+    s1_title:"1. Responsável pelo Tratamento",
+    s1_body:"O responsável pelo tratamento dos dados pessoais é a organização ELIARH / E.R.H.D., acessível pelo site eliarh.it. Para quaisquer solicitações relacionadas à privacidade, entre em contato pelos canais oficiais do portal.",
+    s2_title:"2. Dados Coletados",
+    s2_body:"ELIARH.IT coleta exclusivamente os dados necessários para o acesso à plataforma educacional pelos membros E.R.H.D. Os dados tratados podem incluir:",
+    s2_l1:"Dados de identificação: nome, sobrenome, nacionalidade",
+    s2_l2:"Dados de acesso: credenciais de login do membro E.R.H.D.",
+    s2_l3:"Dados educacionais: progresso, certificações e atividades escolares",
+    s2_l4:"Dados técnicos: endereço IP, tipo de navegador, dispositivo utilizado",
+    s2_l5:"Dados de navegação: páginas visitadas, duração da sessão",
+    s3_title:"3. Finalidade do Tratamento",
+    s3_body:"Os dados são tratados exclusivamente para: fornecer os serviços educacionais da plataforma; gerenciar o acesso reservado aos membros E.R.H.D.; emitir certificações e diplomas; cumprir obrigações legais; melhorar a qualidade dos serviços oferecidos.",
+    s4_title:"4. Direitos do Usuário (LGPD, GDPR e equivalentes)",
+    s4_body:"Em conformidade com a LGPD, o GDPR e legislações equivalentes aplicáveis, cada usuário tem o direito de:",
+    s4_l1:"Acessar seus dados pessoais",
+    s4_l2:"Solicitar a correção ou exclusão dos dados",
+    s4_l3:"Opor-se ao tratamento ou solicitar sua limitação",
+    s4_l4:"Solicitar a portabilidade dos dados",
+    s5_title:"5. Retenção dos Dados",
+    s5_body:"Os dados pessoais são retidos pelo tempo estritamente necessário às finalidades para as quais foram coletados, respeitando os prazos previstos pela legislação aplicável. Os dados educacionais podem ser retidos por um período mais longo para fins de certificação acadêmica.",
+    s6_title:"6. Cookies e Tecnologias de Rastreamento",
+    s6_body:"O site utiliza exclusivamente cookies técnicos necessários ao funcionamento da plataforma. Não são utilizados cookies de perfilamento ou de marketing de terceiros. O usuário pode desativar os cookies nas configurações do seu navegador.",
+    s7_title:"7. Transferência Internacional de Dados",
+    s7_body:"Dada a natureza global da organização E.R.H.D., os dados podem ser tratados em países fora da União Europeia. Nesses casos, ELIARH.IT garante a adoção de salvaguardas adequadas em conformidade com o GDPR e a LGPD.",
+    s8_title:"8. Segurança dos Dados",
+    s8_body:"ELIARH.IT adota medidas técnicas e organizacionais adequadas para proteger os dados pessoais contra acessos não autorizados, perda, destruição ou divulgação. A plataforma opera em infraestrutura própria com protocolos de segurança atualizados.",
+    s9_title:"9. Menores de Idade",
+    s9_body:"A plataforma educacional é acessível também a menores de idade, exclusivamente sob a responsabilidade e com o consentimento dos pais ou responsáveis legais membros E.R.H.D. Os dados de menores são tratados com medidas de proteção reforçadas.",
+    s10_title:"10. Alterações à Política de Privacidade",
+    s10_body:"ELIARH.IT reserva-se o direito de atualizar esta política. As alterações serão publicadas nesta página com a indicação da data de atualização. Recomenda-se consultar esta página periodicamente.",
+  },
+  en:{
+    back:"← Back to Home",
+    label:"Privacy Policy",
+    title:"Privacy Policy",
+    updated:"Last updated: April 2026 · Version 1.0",
+    intro:"ELIARH.IT respects the privacy of its users and E.R.H.D. members. This policy has been drafted in compliance with EU Regulation 2016/679 (GDPR), the Brazilian LGPD (Law 13.709/2018), the Italian Privacy Code and the applicable regulations in the countries where the organisation operates.",
+    s1_title:"1. Data Controller",
+    s1_body:"The data controller is the ELIARH / E.R.H.D. organisation, reachable through the site eliarh.it. For any privacy-related requests, please contact us through the official portal channels.",
+    s2_title:"2. Data Collected",
+    s2_body:"ELIARH.IT collects only the data necessary for E.R.H.D. members to access the educational platform. Data processed may include:",
+    s2_l1:"Identification data: first name, last name, nationality",
+    s2_l2:"Access data: E.R.H.D. member login credentials",
+    s2_l3:"Educational data: progress, certifications and academic activities",
+    s2_l4:"Technical data: IP address, browser type, device used",
+    s2_l5:"Navigation data: pages visited, session duration",
+    s3_title:"3. Purpose of Processing",
+    s3_body:"Data is processed exclusively to: provide the platform's educational services; manage access reserved for E.R.H.D. members; issue certifications and diplomas; comply with legal obligations; improve the quality of services offered.",
+    s4_title:"4. User Rights (GDPR and equivalent regulations)",
+    s4_body:"In accordance with the GDPR and applicable equivalent regulations, every user has the right to:",
+    s4_l1:"Access their personal data",
+    s4_l2:"Request correction or deletion of data",
+    s4_l3:"Object to processing or request its limitation",
+    s4_l4:"Request data portability",
+    s5_title:"5. Data Retention",
+    s5_body:"Personal data is retained for the time strictly necessary for the purposes for which it was collected, in compliance with applicable legal requirements. Educational data may be retained for a longer period for academic certification purposes.",
+    s6_title:"6. Cookies and Tracking Technologies",
+    s6_body:"The site uses only technical cookies necessary for the platform's operation. No third-party profiling or marketing cookies are used. Users may disable cookies in their browser settings.",
+    s7_title:"7. International Data Transfer",
+    s7_body:"Given the global nature of the E.R.H.D. organisation, data may be processed in countries outside the European Union. In such cases, ELIARH.IT ensures the adoption of adequate safeguards in compliance with the GDPR.",
+    s8_title:"8. Data Security",
+    s8_body:"ELIARH.IT adopts adequate technical and organisational measures to protect personal data from unauthorised access, loss, destruction or disclosure. The platform operates on proprietary infrastructure with up-to-date security protocols.",
+    s9_title:"9. Minors",
+    s9_body:"The educational platform is accessible to minors exclusively under the responsibility and with the consent of parents or legal guardians who are E.R.H.D. members. Data relating to minors is processed with enhanced protection measures.",
+    s10_title:"10. Changes to the Privacy Policy",
+    s10_body:"ELIARH.IT reserves the right to update this policy. Changes will be published on this page with the date of update indicated. Users are advised to consult this page periodically.",
+  },
+  es:{
+    back:"← Volver al Inicio",
+    label:"Política de Privacidad",
+    title:"Política de Privacidad",
+    updated:"Última actualización: Abril 2026 · Versión 1.0",
+    intro:"ELIARH.IT respeta la privacidad de sus usuarios y de los miembros E.R.H.D. Esta política ha sido redactada en conformidad con el Reglamento UE 2016/679 (GDPR), la LGPD brasileña (Ley 13.709/2018), el Código de Privacidad italiano y las normativas aplicables en los países de presencia de la organización.",
+    s1_title:"1. Responsable del Tratamiento",
+    s1_body:"El responsable del tratamiento de los datos personales es la organización ELIARH / E.R.H.D., accesible a través del sitio eliarh.it. Para cualquier solicitud relacionada con la privacidad, contáctenos a través de los canales oficiales del portal.",
+    s2_title:"2. Datos Recopilados",
+    s2_body:"ELIARH.IT recopila exclusivamente los datos necesarios para el acceso a la plataforma educativa por parte de los miembros E.R.H.D. Los datos tratados pueden incluir:",
+    s2_l1:"Datos de identificación: nombre, apellido, nacionalidad",
+    s2_l2:"Datos de acceso: credenciales de login del miembro E.R.H.D.",
+    s2_l3:"Datos educativos: progreso, certificaciones y actividades escolares",
+    s2_l4:"Datos técnicos: dirección IP, tipo de navegador, dispositivo utilizado",
+    s2_l5:"Datos de navegación: páginas visitadas, duración de la sesión",
+    s3_title:"3. Finalidad del Tratamiento",
+    s3_body:"Los datos se tratan exclusivamente para: prestar los servicios educativos de la plataforma; gestionar el acceso reservado a los miembros E.R.H.D.; emitir certificaciones y diplomas; cumplir con las obligaciones legales; mejorar la calidad de los servicios ofrecidos.",
+    s4_title:"4. Derechos del Usuario (GDPR y normativas equivalentes)",
+    s4_body:"De conformidad con el GDPR y las normativas equivalentes aplicables, cada usuario tiene derecho a:",
+    s4_l1:"Acceder a sus datos personales",
+    s4_l2:"Solicitar la rectificación o supresión de los datos",
+    s4_l3:"Oponerse al tratamiento o solicitar su limitación",
+    s4_l4:"Solicitar la portabilidad de los datos",
+    s5_title:"5. Conservación de los Datos",
+    s5_body:"Los datos personales se conservan durante el tiempo estrictamente necesario para los fines para los que fueron recopilados, respetando los plazos previstos por la normativa aplicable. Los datos educativos pueden conservarse durante un período más prolongado a efectos de certificación académica.",
+    s6_title:"6. Cookies y Tecnologías de Rastreo",
+    s6_body:"El sitio utiliza exclusivamente cookies técnicas necesarias para el funcionamiento de la plataforma. No se utilizan cookies de perfilado ni de marketing de terceros. El usuario puede desactivar las cookies en la configuración de su navegador.",
+    s7_title:"7. Transferencia Internacional de Datos",
+    s7_body:"Dada la naturaleza global de la organización E.R.H.D., los datos pueden ser tratados en países fuera de la Unión Europea. En tales casos, ELIARH.IT garantiza la adopción de salvaguardas adecuadas conforme al GDPR.",
+    s8_title:"8. Seguridad de los Datos",
+    s8_body:"ELIARH.IT adopta medidas técnicas y organizativas adecuadas para proteger los datos personales frente a accesos no autorizados, pérdida, destrucción o divulgación. La plataforma opera en infraestructura propia con protocolos de seguridad actualizados.",
+    s9_title:"9. Menores de Edad",
+    s9_body:"La plataforma educativa es accesible también a menores de edad, exclusivamente bajo la responsabilidad y con el consentimiento de los padres o tutores legales miembros E.R.H.D. Los datos de menores se tratan con medidas de protección reforzadas.",
+    s10_title:"10. Modificaciones a la Política de Privacidad",
+    s10_body:"ELIARH.IT se reserva el derecho de actualizar esta política. Los cambios se publicarán en esta página con la fecha de actualización. Se recomienda consultar esta página periódicamente.",
+  },
+  fr:{
+    back:"← Retour à l'accueil",
+    label:"Politique de Confidentialité",
+    title:"Politique de Confidentialité",
+    updated:"Dernière mise à jour : Avril 2026 · Version 1.0",
+    intro:"ELIARH.IT respecte la vie privée de ses utilisateurs et des membres E.R.H.D. La présente politique a été rédigée en conformité avec le Règlement UE 2016/679 (RGPD), la LGPD brésilienne (Loi 13.709/2018), le Code de la vie privée italien et les réglementations applicables dans les pays où l'organisation est présente.",
+    s1_title:"1. Responsable du Traitement",
+    s1_body:"Le responsable du traitement des données personnelles est l'organisation ELIARH / E.R.H.D., accessible via le site eliarh.it. Pour toute demande relative à la vie privée, veuillez nous contacter via les canaux officiels du portail.",
+    s2_title:"2. Données Collectées",
+    s2_body:"ELIARH.IT collecte uniquement les données nécessaires à l'accès à la plateforme éducative par les membres E.R.H.D. Les données traitées peuvent inclure :",
+    s2_l1:"Données d'identification : prénom, nom, nationalité",
+    s2_l2:"Données d'accès : identifiants de connexion du membre E.R.H.D.",
+    s2_l3:"Données éducatives : progrès, certifications et activités scolaires",
+    s2_l4:"Données techniques : adresse IP, type de navigateur, appareil utilisé",
+    s2_l5:"Données de navigation : pages visitées, durée de la session",
+    s3_title:"3. Finalité du Traitement",
+    s3_body:"Les données sont traitées exclusivement pour : fournir les services éducatifs de la plateforme ; gérer l'accès réservé aux membres E.R.H.D. ; délivrer des certifications et des diplômes ; respecter les obligations légales ; améliorer la qualité des services offerts.",
+    s4_title:"4. Droits de l'Utilisateur (RGPD et réglementations équivalentes)",
+    s4_body:"Conformément au RGPD et aux réglementations équivalentes applicables, chaque utilisateur a le droit de :",
+    s4_l1:"Accéder à ses données personnelles",
+    s4_l2:"Demander la rectification ou la suppression des données",
+    s4_l3:"S'opposer au traitement ou en demander la limitation",
+    s4_l4:"Demander la portabilité des données",
+    s5_title:"5. Conservation des Données",
+    s5_body:"Les données personnelles sont conservées pendant le temps strictement nécessaire aux finalités pour lesquelles elles ont été collectées, dans le respect des délais prévus par la réglementation applicable. Les données éducatives peuvent être conservées plus longtemps à des fins de certification académique.",
+    s6_title:"6. Cookies et Technologies de Suivi",
+    s6_body:"Le site utilise exclusivement des cookies techniques nécessaires au fonctionnement de la plateforme. Aucun cookie de profilage ou de marketing tiers n'est utilisé. L'utilisateur peut désactiver les cookies dans les paramètres de son navigateur.",
+    s7_title:"7. Transfert International de Données",
+    s7_body:"En raison de la nature mondiale de l'organisation E.R.H.D., les données peuvent être traitées dans des pays en dehors de l'Union européenne. Dans ce cas, ELIARH.IT garantit l'adoption de garanties adéquates conformes au RGPD.",
+    s8_title:"8. Sécurité des Données",
+    s8_body:"ELIARH.IT adopte des mesures techniques et organisationnelles adéquates pour protéger les données personnelles contre les accès non autorisés, la perte, la destruction ou la divulgation. La plateforme fonctionne sur une infrastructure propre avec des protocoles de sécurité à jour.",
+    s9_title:"9. Mineurs",
+    s9_body:"La plateforme éducative est accessible aux mineurs exclusivement sous la responsabilité et avec le consentement des parents ou tuteurs légaux membres E.R.H.D. Les données relatives aux mineurs sont traitées avec des mesures de protection renforcées.",
+    s10_title:"10. Modifications de la Politique de Confidentialité",
+    s10_body:"ELIARH.IT se réserve le droit de mettre à jour la présente politique. Les modifications seront publiées sur cette page avec la date de mise à jour. Il est conseillé de consulter régulièrement cette page.",
+  }
+};
+
+function setLang(lang){
+  document.getElementById('html-root').lang=lang==='pt'?'pt-BR':lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
+  const d=T[lang];
+  document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k]!==undefined)el.innerHTML=d[k];});
+}
+setLang('it');
+</script>
+</body>
+</html>
