@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELIARH.IT — Terms of Use</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --menu-bg:#4a5568;--menu-hover:#2d3748;--menu-text:#f7f3ee;--menu-active:#C9A84C;
+  --body-bg:#f5f0e8;--card-bg:#f0ead8;--card-border:#d6ccb4;
+  --text-dark:#1a1a1a;--text-mid:#3a3a3a;--text-muted:#6a6a6a;
+  --gold:#C9A84C;--gold-d:#9a7a30;--radius:6px;
+}
+body{font-family:Arial,sans-serif;font-size:14px;background:var(--body-bg);color:var(--text-dark);line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+header{background:var(--menu-bg);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;}
+.nav-logo{font-size:1.3rem;font-weight:bold;color:var(--menu-active);letter-spacing:.08em;}
+.nav-logo span{color:var(--menu-text);font-weight:normal;font-size:1rem;margin-left:.4rem;}
+.lang-switcher{display:flex;gap:.3rem;}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.25);color:var(--menu-text);font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;letter-spacing:.08em;padding:4px 9px;border-radius:3px;cursor:pointer;transition:background .2s;}
+.lang-btn:hover,.lang-btn.active{background:var(--gold);border-color:var(--gold);color:#1a1a1a;}
+.construction{background:#c0392b;color:#fff;text-align:center;padding:8px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.1em;}
+main{max-width:860px;margin:0 auto;padding:3rem 2rem 5rem;}
+.page-label{font-size:.65rem;font-weight:bold;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.6rem;}
+h1{font-size:1.6rem;font-weight:bold;color:var(--text-dark);margin-bottom:.5rem;border-bottom:2px solid var(--gold);padding-bottom:.5rem;display:inline-block;}
+.updated{font-size:.78rem;color:var(--text-muted);margin:1rem 0 2rem;}
+h2{font-size:1rem;font-weight:bold;color:var(--text-dark);margin:2rem 0 .5rem;text-transform:uppercase;letter-spacing:.06em;}
+p{font-size:.9rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.8;}
+ul{padding-left:1.5rem;margin-bottom:1rem;}
+ul li{font-size:.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:.3rem;}
+.highlight-box{background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.2rem 1.5rem;margin:1.5rem 0;}
+.highlight-box p{margin:0;font-size:.88rem;}
+.back-link{display:inline-block;margin-bottom:2rem;font-size:.82rem;color:var(--gold-d);font-weight:bold;text-decoration:underline;}
+footer{background:var(--menu-hover);color:rgba(247,243,238,0.65);text-align:center;padding:2rem;font-size:.78rem;line-height:1.8;}
+footer strong{color:var(--menu-active);}
+footer a{color:var(--menu-active);text-decoration:underline;font-size:.75rem;}
+@media(max-width:768px){.nav-top{padding:0 1.2rem;}main{padding:2rem 1.2rem 4rem;}}
+</style>
+</head>
+<body>
+
+<div class="construction">⚠ SITE EM CONSTRUÇÃO</div>
+
+<header>
+  <div class="nav-top">
+    <a href="/"><div class="nav-logo">ELIARH<span>.IT</span></div></a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('it')">IT</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="/" data-t="back"></a>
+  <p class="page-label" data-t="label"></p>
+  <h1 data-t="title"></h1>
+  <p class="updated" data-t="updated"></p>
+
+  <div class="highlight-box"><p data-t="intro"></p></div>
+
+  <h2 data-t="s1_title"></h2>
+  <p data-t="s1_body"></p>
+
+  <h2 data-t="s2_title"></h2>
+  <p data-t="s2_body"></p>
+
+  <h2 data-t="s3_title"></h2>
+  <p data-t="s3_body"></p>
+  <ul>
+    <li data-t="s3_l1"></li>
+    <li data-t="s3_l2"></li>
+    <li data-t="s3_l3"></li>
+    <li data-t="s3_l4"></li>
+    <li data-t="s3_l5"></li>
+  </ul>
+
+  <h2 data-t="s4_title"></h2>
+  <p data-t="s4_body"></p>
+
+  <h2 data-t="s5_title"></h2>
+  <p data-t="s5_body"></p>
+
+  <h2 data-t="s6_title"></h2>
+  <p data-t="s6_body"></p>
+
+  <h2 data-t="s7_title"></h2>
+  <p data-t="s7_body"></p>
+
+  <h2 data-t="s8_title"></h2>
+  <p data-t="s8_body"></p>
+
+  <h2 data-t="s9_title"></h2>
+  <p data-t="s9_body"></p>
+
+  <h2 data-t="s10_title"></h2>
+  <p data-t="s10_body"></p>
+</main>
+
+<footer>
+  <strong>ELIARH.IT</strong> — Azione Sociale E.R.H.D.<br>
+  <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms/">Terms of Use</a>
+</footer>
+
+<script>
+const T={
+  it:{
+    back:"← Torna alla Home",
+    label:"Termini di Utilizzo",
+    title:"Termini di Utilizzo",
+    updated:"Ultimo aggiornamento: Aprile 2026 · Versione 1.0",
+    intro:"L'accesso e l'utilizzo della piattaforma educativa ELIARH.IT sono riservati esclusivamente ai membri E.R.H.D. in regola. L'utilizzo del sito implica l'accettazione integrale dei presenti Termini di Utilizzo.",
+    s1_title:"1. Accesso alla Piattaforma",
+    s1_body:"La piattaforma educativa ELIARH.IT è accessibile esclusivamente ai membri attivi dell'organizzazione E.R.H.D. L'accesso avviene tramite credenziali personali e intrasferibili. Qualsiasi tentativo di accesso non autorizzato sarà segnalato alle autorità competenti.",
+    s2_title:"2. Natura del Servizio",
+    s2_body:"ELIARH.IT è una scuola globale gratuita, erogata come azione sociale dell'organizzazione E.R.H.D. ai propri membri e ai loro figli. Il servizio è offerto senza scopo di lucro e non prevede il pagamento di alcuna quota da parte dei membri aventi diritto.",
+    s3_title:"3. Obblighi dell'Utente",
+    s3_body:"Utilizzando la piattaforma, l'utente si impegna a:",
+    s3_l1:"Utilizzare le credenziali di accesso in modo personale e riservato",
+    s3_l2:"Non condividere materiali educativi con soggetti non membri E.R.H.D.",
+    s3_l3:"Rispettare le norme di condotta della comunità ELIARH",
+    s3_l4:"Non utilizzare la piattaforma per scopi commerciali o illeciti",
+    s3_l5:"Segnalare eventuali anomalie o violazioni ai canali ufficiali",
+    s4_title:"4. Proprietà Intellettuale",
+    s4_body:"Tutti i contenuti presenti sulla piattaforma ELIARH.IT — testi, curricula, materiali didattici, programmi e risorse — sono di proprietà esclusiva dell'organizzazione ELIARH / E.R.H.D. È vietata la riproduzione, distribuzione o utilizzo commerciale senza autorizzazione scritta.",
+    s5_title:"5. Utilizzo delle Intelligenze Artificiali",
+    s5_body:"La piattaforma utilizza intelligenze artificiali (API) come strumenti didattici. Questi strumenti sono configurati e supervisionati dall'organizzazione ELIARH. L'utente riconosce che le risposte generate dalle IA hanno scopo educativo e non costituiscono consulenza professionale, medica, legale o finanziaria.",
+    s6_title:"6. Certificazioni e Diplomi",
+    s6_body:"Le certificazioni e i diplomi emessi da ELIARH.IT sono riconosciuti nell'ambito dell'organizzazione E.R.H.D. e, ove applicabile, dalle autorità nazionali competenti nei paesi di presenza. ELIARH.IT persegue attivamente il riconoscimento internazionale tramite il framework IB e le autorità nazionali.",
+    s7_title:"7. Limitazione di Responsabilità",
+    s7_body:"ELIARH.IT si impegna a garantire la continuità e la qualità del servizio. Tuttavia, non risponde di interruzioni dovute a cause di forza maggiore, manutenzione tecnica o eventi al di fuori del proprio controllo. Il servizio è fornito 'così com'è' durante la fase di costruzione e test.",
+    s8_title:"8. Minori",
+    s8_body:"L'accesso di minori alla piattaforma avviene sotto la piena responsabilità dei genitori o tutori legali, anch'essi membri E.R.H.D. I genitori sono responsabili del monitoraggio dell'utilizzo della piattaforma da parte dei propri figli.",
+    s9_title:"9. Modifiche ai Termini",
+    s9_body:"ELIARH.IT si riserva il diritto di aggiornare i presenti Termini di Utilizzo. Le modifiche saranno pubblicate su questa pagina con indicazione della data di aggiornamento. L'utilizzo continuato della piattaforma dopo le modifiche implica l'accettazione dei nuovi termini.",
+    s10_title:"10. Legge Applicabile e Foro Competente",
+    s10_body:"I presenti Termini sono regolati dalla legge italiana e dal diritto dell'Unione Europea. Per qualsiasi controversia, è competente il foro di riferimento dell'organizzazione ELIARH, fatta salva la normativa locale applicabile nei paesi di presenza dei membri E.R.H.D.",
+  },
+  pt:{
+    back:"← Voltar à Home",
+    label:"Política de Uso",
+    title:"Política de Uso",
+    updated:"Última atualização: Abril de 2026 · Versão 1.0",
+    intro:"O acesso e o uso da plataforma educacional ELIARH.IT são reservados exclusivamente aos membros E.R.H.D. em situação regular. O uso do site implica a aceitação integral desta Política de Uso.",
+    s1_title:"1. Acesso à Plataforma",
+    s1_body:"A plataforma educacional ELIARH.IT é acessível exclusivamente aos membros ativos da organização E.R.H.D. O acesso é realizado por meio de credenciais pessoais e intransferíveis. Qualquer tentativa de acesso não autorizado será reportada às autoridades competentes.",
+    s2_title:"2. Natureza do Serviço",
+    s2_body:"ELIARH.IT é uma escola global gratuita, oferecida como ação social da organização E.R.H.D. aos seus membros e filhos. O serviço é prestado sem fins lucrativos e não prevê o pagamento de qualquer taxa por parte dos membros com direito de acesso.",
+    s3_title:"3. Obrigações do Usuário",
+    s3_body:"Ao utilizar a plataforma, o usuário se compromete a:",
+    s3_l1:"Utilizar as credenciais de acesso de forma pessoal e confidencial",
+    s3_l2:"Não compartilhar materiais educacionais com pessoas não membros E.R.H.D.",
+    s3_l3:"Respeitar as normas de conduta da comunidade ELIARH",
+    s3_l4:"Não utilizar a plataforma para fins comerciais ou ilícitos",
+    s3_l5:"Reportar eventuais anomalias ou violações pelos canais oficiais",
+    s4_title:"4. Propriedade Intelectual",
+    s4_body:"Todos os conteúdos presentes na plataforma ELIARH.IT — textos, currículos, materiais didáticos, programas e recursos — são de propriedade exclusiva da organização ELIARH / E.R.H.D. É proibida a reprodução, distribuição ou uso comercial sem autorização escrita.",
+    s5_title:"5. Uso de Inteligências Artificiais",
+    s5_body:"A plataforma utiliza inteligências artificiais (APIs) como ferramentas didáticas. Essas ferramentas são configuradas e supervisionadas pela organização ELIARH. O usuário reconhece que as respostas geradas pelas IAs têm finalidade educacional e não constituem consultoria profissional, médica, jurídica ou financeira.",
+    s6_title:"6. Certificações e Diplomas",
+    s6_body:"As certificações e diplomas emitidos pela ELIARH.IT são reconhecidos no âmbito da organização E.R.H.D. e, quando aplicável, pelas autoridades nacionais competentes nos países de presença. ELIARH.IT busca ativamente o reconhecimento internacional via framework IB e autoridades nacionais.",
+    s7_title:"7. Limitação de Responsabilidade",
+    s7_body:"ELIARH.IT se compromete a garantir a continuidade e a qualidade do serviço. No entanto, não se responsabiliza por interrupções devidas a causas de força maior, manutenção técnica ou eventos fora de seu controle. O serviço é fornecido 'no estado em que se encontra' durante a fase de construção e testes.",
+    s8_title:"8. Menores de Idade",
+    s8_body:"O acesso de menores à plataforma ocorre sob a plena responsabilidade dos pais ou responsáveis legais, também membros E.R.H.D. Os pais são responsáveis pelo monitoramento do uso da plataforma por seus filhos.",
+    s9_title:"9. Alterações nos Termos",
+    s9_body:"ELIARH.IT reserva-se o direito de atualizar esta Política de Uso. As alterações serão publicadas nesta página com a data de atualização. O uso continuado da plataforma após as alterações implica a aceitação dos novos termos.",
+    s10_title:"10. Lei Aplicável e Foro Competente",
+    s10_body:"Esta Política é regida pela lei italiana e pelo direito da União Europeia, em conformidade com a legislação brasileira aplicável (LGPD e demais normas). Para qualquer controvérsia, é competente o foro de referência da organização ELIARH, ressalvada a legislação local aplicável nos países de presença dos membros E.R.H.D.",
+  },
+  en:{
+    back:"← Back to Home",
+    label:"Terms of Use",
+    title:"Terms of Use",
+    updated:"Last updated: April 2026 · Version 1.0",
+    intro:"Access to and use of the ELIARH.IT educational platform is reserved exclusively for active E.R.H.D. members in good standing. Use of the site implies full acceptance of these Terms of Use.",
+    s1_title:"1. Platform Access",
+    s1_body:"The ELIARH.IT educational platform is accessible exclusively to active members of the E.R.H.D. organisation. Access is via personal, non-transferable credentials. Any attempt at unauthorised access will be reported to the relevant authorities.",
+    s2_title:"2. Nature of the Service",
+    s2_body:"ELIARH.IT is a free global school, provided as a social action of the E.R.H.D. organisation for its members and their children. The service is offered on a non-profit basis and does not require payment of any fee by entitled members.",
+    s3_title:"3. User Obligations",
+    s3_body:"By using the platform, the user agrees to:",
+    s3_l1:"Use access credentials in a personal and confidential manner",
+    s3_l2:"Not share educational materials with non-E.R.H.D. members",
+    s3_l3:"Respect the ELIARH community code of conduct",
+    s3_l4:"Not use the platform for commercial or unlawful purposes",
+    s3_l5:"Report any anomalies or violations through official channels",
+    s4_title:"4. Intellectual Property",
+    s4_body:"All content on the ELIARH.IT platform — texts, curricula, teaching materials, programmes and resources — is the exclusive property of the ELIARH / E.R.H.D. organisation. Reproduction, distribution or commercial use without written authorisation is prohibited.",
+    s5_title:"5. Use of Artificial Intelligence",
+    s5_body:"The platform uses artificial intelligences (APIs) as teaching tools. These tools are configured and supervised by the ELIARH organisation. The user acknowledges that AI-generated responses are for educational purposes and do not constitute professional, medical, legal or financial advice.",
+    s6_title:"6. Certifications and Diplomas",
+    s6_body:"Certifications and diplomas issued by ELIARH.IT are recognised within the E.R.H.D. organisation and, where applicable, by the relevant national authorities in the countries of presence. ELIARH.IT actively pursues international recognition through the IB framework and national authorities.",
+    s7_title:"7. Limitation of Liability",
+    s7_body:"ELIARH.IT is committed to ensuring service continuity and quality. However, it is not liable for interruptions due to force majeure, technical maintenance or events outside its control. The service is provided 'as is' during the construction and testing phase.",
+    s8_title:"8. Minors",
+    s8_body:"Access by minors to the platform is under the full responsibility of parents or legal guardians who are also E.R.H.D. members. Parents are responsible for monitoring their children's use of the platform.",
+    s9_title:"9. Changes to Terms",
+    s9_body:"ELIARH.IT reserves the right to update these Terms of Use. Changes will be published on this page with the date of update. Continued use of the platform after changes implies acceptance of the new terms.",
+    s10_title:"10. Applicable Law and Jurisdiction",
+    s10_body:"These Terms are governed by Italian law and European Union law. For any dispute, the reference jurisdiction of the ELIARH organisation applies, subject to local legislation applicable in the countries of presence of E.R.H.D. members.",
+  },
+  es:{
+    back:"← Volver al Inicio",
+    label:"Política de Uso",
+    title:"Política de Uso",
+    updated:"Última actualización: Abril 2026 · Versión 1.0",
+    intro:"El acceso y el uso de la plataforma educativa ELIARH.IT están reservados exclusivamente a los miembros E.R.H.D. en situación regular. El uso del sitio implica la aceptación íntegra de esta Política de Uso.",
+    s1_title:"1. Acceso a la Plataforma",
+    s1_body:"La plataforma educativa ELIARH.IT es accesible exclusivamente a los miembros activos de la organización E.R.H.D. El acceso se realiza mediante credenciales personales e intransferibles. Cualquier intento de acceso no autorizado será comunicado a las autoridades competentes.",
+    s2_title:"2. Naturaleza del Servicio",
+    s2_body:"ELIARH.IT es una escuela global gratuita, ofrecida como acción social de la organización E.R.H.D. a sus miembros e hijos. El servicio se presta sin ánimo de lucro y no prevé el pago de ninguna cuota por parte de los miembros con derecho de acceso.",
+    s3_title:"3. Obligaciones del Usuario",
+    s3_body:"Al utilizar la plataforma, el usuario se compromete a:",
+    s3_l1:"Utilizar las credenciales de acceso de forma personal y confidencial",
+    s3_l2:"No compartir materiales educativos con personas no miembros E.R.H.D.",
+    s3_l3:"Respetar las normas de conducta de la comunidad ELIARH",
+    s3_l4:"No utilizar la plataforma con fines comerciales o ilícitos",
+    s3_l5:"Comunicar cualquier anomalía o infracción a través de los canales oficiales",
+    s4_title:"4. Propiedad Intelectual",
+    s4_body:"Todos los contenidos presentes en la plataforma ELIARH.IT — textos, currículos, materiales didácticos, programas y recursos — son propiedad exclusiva de la organización ELIARH / E.R.H.D. Se prohíbe su reproducción, distribución o uso comercial sin autorización escrita.",
+    s5_title:"5. Uso de Inteligencias Artificiales",
+    s5_body:"La plataforma utiliza inteligencias artificiales (APIs) como herramientas didácticas. Estas herramientas son configuradas y supervisadas por la organización ELIARH. El usuario reconoce que las respuestas generadas por las IA tienen finalidad educativa y no constituyen asesoramiento profesional, médico, jurídico o financiero.",
+    s6_title:"6. Certificaciones y Diplomas",
+    s6_body:"Las certificaciones y diplomas emitidos por ELIARH.IT son reconocidos en el ámbito de la organización E.R.H.D. y, cuando proceda, por las autoridades nacionales competentes en los países de presencia. ELIARH.IT persigue activamente el reconocimiento internacional a través del marco IB y las autoridades nacionales.",
+    s7_title:"7. Limitación de Responsabilidad",
+    s7_body:"ELIARH.IT se compromete a garantizar la continuidad y la calidad del servicio. Sin embargo, no es responsable de las interrupciones debidas a causas de fuerza mayor, mantenimiento técnico o eventos fuera de su control. El servicio se proporciona 'tal cual' durante la fase de construcción y pruebas.",
+    s8_title:"8. Menores de Edad",
+    s8_body:"El acceso de menores a la plataforma se produce bajo la plena responsabilidad de los padres o tutores legales, también miembros E.R.H.D. Los padres son responsables del control del uso de la plataforma por parte de sus hijos.",
+    s9_title:"9. Modificaciones de los Términos",
+    s9_body:"ELIARH.IT se reserva el derecho de actualizar esta Política de Uso. Los cambios se publicarán en esta página con la fecha de actualización. El uso continuado de la plataforma tras los cambios implica la aceptación de los nuevos términos.",
+    s10_title:"10. Ley Aplicable y Jurisdicción",
+    s10_body:"Esta Política se rige por la ley italiana y el derecho de la Unión Europea. Para cualquier controversia, será competente el foro de referencia de la organización ELIARH, sin perjuicio de la legislación local aplicable en los países de presencia de los miembros E.R.H.D.",
+  },
+  fr:{
+    back:"← Retour à l'accueil",
+    label:"Conditions d'Utilisation",
+    title:"Conditions d'Utilisation",
+    updated:"Dernière mise à jour : Avril 2026 · Version 1.0",
+    intro:"L'accès et l'utilisation de la plateforme éducative ELIARH.IT sont réservés exclusivement aux membres E.R.H.D. en règle. L'utilisation du site implique l'acceptation intégrale des présentes Conditions d'Utilisation.",
+    s1_title:"1. Accès à la Plateforme",
+    s1_body:"La plateforme éducative ELIARH.IT est accessible exclusivement aux membres actifs de l'organisation E.R.H.D. L'accès s'effectue via des identifiants personnels et non transférables. Toute tentative d'accès non autorisé sera signalée aux autorités compétentes.",
+    s2_title:"2. Nature du Service",
+    s2_body:"ELIARH.IT est une école mondiale gratuite, fournie en tant qu'action sociale de l'organisation E.R.H.D. à ses membres et à leurs enfants. Le service est offert à but non lucratif et ne prévoit le paiement d'aucune cotisation de la part des membres ayant droit d'accès.",
+    s3_title:"3. Obligations de l'Utilisateur",
+    s3_body:"En utilisant la plateforme, l'utilisateur s'engage à :",
+    s3_l1:"Utiliser les identifiants d'accès de manière personnelle et confidentielle",
+    s3_l2:"Ne pas partager les matériaux éducatifs avec des personnes non membres E.R.H.D.",
+    s3_l3:"Respecter les règles de conduite de la communauté ELIARH",
+    s3_l4:"Ne pas utiliser la plateforme à des fins commerciales ou illicites",
+    s3_l5:"Signaler toute anomalie ou violation via les canaux officiels",
+    s4_title:"4. Propriété Intellectuelle",
+    s4_body:"Tous les contenus présents sur la plateforme ELIARH.IT — textes, curricula, matériaux pédagogiques, programmes et ressources — sont la propriété exclusive de l'organisation ELIARH / E.R.H.D. Toute reproduction, distribution ou utilisation commerciale sans autorisation écrite est interdite.",
+    s5_title:"5. Utilisation des Intelligences Artificielles",
+    s5_body:"La plateforme utilise des intelligences artificielles (API) comme outils pédagogiques. Ces outils sont configurés et supervisés par l'organisation ELIARH. L'utilisateur reconnaît que les réponses générées par les IA ont une finalité éducative et ne constituent pas un conseil professionnel, médical, juridique ou financier.",
+    s6_title:"6. Certifications et Diplômes",
+    s6_body:"Les certifications et diplômes délivrés par ELIARH.IT sont reconnus au sein de l'organisation E.R.H.D. et, le cas échéant, par les autorités nationales compétentes dans les pays de présence. ELIARH.IT poursuit activement la reconnaissance internationale via le cadre IB et les autorités nationales.",
+    s7_title:"7. Limitation de Responsabilité",
+    s7_body:"ELIARH.IT s'engage à garantir la continuité et la qualité du service. Toutefois, elle n'est pas responsable des interruptions dues à des cas de force majeure, à une maintenance technique ou à des événements échappant à son contrôle. Le service est fourni 'en l'état' pendant la phase de construction et de test.",
+    s8_title:"8. Mineurs",
+    s8_body:"L'accès des mineurs à la plateforme s'effectue sous la pleine responsabilité des parents ou tuteurs légaux, eux-mêmes membres E.R.H.D. Les parents sont responsables du contrôle de l'utilisation de la plateforme par leurs enfants.",
+    s9_title:"9. Modifications des Conditions",
+    s9_body:"ELIARH.IT se réserve le droit de mettre à jour les présentes Conditions d'Utilisation. Les modifications seront publiées sur cette page avec la date de mise à jour. L'utilisation continue de la plateforme après les modifications implique l'acceptation des nouvelles conditions.",
+    s10_title:"10. Droit Applicable et Juridiction",
+    s10_body:"Les présentes Conditions sont régies par le droit italien et le droit de l'Union européenne. Pour tout litige, la juridiction de référence de l'organisation ELIARH est compétente, sous réserve de la législation locale applicable dans les pays de présence des membres E.R.H.D.",
+  }
+};
+
+function setLang(lang){
+  document.getElementById('html-root').lang=lang==='pt'?'pt-BR':lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
+  const d=T[lang];
+  document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k]!==undefined)el.innerHTML=d[k];});
+}
+setLang('it');
+</script>
+</body>
+</html>
